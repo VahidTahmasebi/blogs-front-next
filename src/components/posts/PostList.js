@@ -1,4 +1,6 @@
+import { ClockIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import PostInteraction from "./PostInteraction";
 
 const PostList = ({ blogsData }) => {
   console.log(blogsData);
@@ -35,7 +37,7 @@ const PostList = ({ blogsData }) => {
                   </a>
                 </Link>
                 <span className="text-sm font-bold text-gray-500">
-                  {blog.authorname}
+                  {blog.author.name}
                 </span>
               </div>
 
@@ -46,6 +48,16 @@ const PostList = ({ blogsData }) => {
                   </span>
                 </a>
               </Link>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <PostInteraction post={blog} isSmall />
+              <div className="flex items-center text-[10px] font-bold text-gray-400">
+                <ClockIcon className="w-4 h-4 ml-1 stroke-gray-400" />
+                <span className="ml-1"></span>
+                <span className="ml-1 leading-3">{blog.readingTime}</span>
+                <span>min</span>
+              </div>
             </div>
           </div>
         </div>
