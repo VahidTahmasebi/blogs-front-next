@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
 const CategoryDesktop = ({ postCategories }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="bg-white rounded-3xl overflow-hidden">
