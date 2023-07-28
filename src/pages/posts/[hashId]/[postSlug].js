@@ -203,7 +203,7 @@ const PostPage = ({ post }) => {
 
 export default PostPage;
 
-export async function getServeSideProps(ctx) {
+export async function getServerSideProps(ctx) {
   const { query } = ctx;
   const {
     data: { data },
