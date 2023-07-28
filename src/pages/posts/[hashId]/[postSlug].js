@@ -2,6 +2,9 @@ import axios from "axios";
 
 import { BookmarkIcon, LinkIcon } from "@heroicons/react/outline";
 import { BookmarkIcon as SolidBookmarkIcon } from "@heroicons/react/solid";
+import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
+import { FaTelegram } from "react-icons/fa";
+
 import PostInteraction from "@/components/posts/PostInteraction";
 
 const PostPage = ({ post }) => {
@@ -123,8 +126,46 @@ const PostPage = ({ post }) => {
             })}
           </ul>
 
-          <div>
-            <PostInteraction post={blog} />
+          <div className="flex flex-col md:flex-row md:justify-between items-center gap-y-8">
+            <PostInteraction
+              post={blog}
+              className="w-full justify-evenly md:w-auto"
+            />
+            <div className="w-full flex justify-evenly items-center gap-x-3 md:gap-x-4 md:w-auto">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="block"
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${process.env.NEXT_PUBLIC_DOMAIM_URL}/posts/${post.hasId}/${post.slug}}
+`}>
+                <IoLogoLinkedin
+                  size={30}
+                  className="fill-slate-400 hover:fill-gray-500 transition-all duration-300 cursor-pointer"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="block"
+                href={`https://www.twitter.com/share?text=${post.title}&url=${process.env.NEXT_PUBLIC_DOMAIM_URL}/posts/${post.hasId}/${post.slug}}
+`}>
+                <IoLogoTwitter
+                  size={24}
+                  className="fill-slate-400 hover:fill-gray-500 transition-all duration-300 cursor-pointer"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="block"
+                href={`https://www.telegram.me/share/url?url=${process.env.NEXT_PUBLIC_DOMAIM_URL}/posts/${post.hasId}/${post.slug}&text=${post.title}}
+`}>
+                <FaTelegram
+                  size={30}
+                  className="fill-slate-400 hover:fill-gray-500 transition-all duration-300 cursor-pointer"
+                />
+              </a>
+            </div>
           </div>
         </section>
       </div>
@@ -144,5 +185,4 @@ export async function getServeSideProps(ctx) {
       post: data.data,
     },
   };
-  console.log(query);
 }
