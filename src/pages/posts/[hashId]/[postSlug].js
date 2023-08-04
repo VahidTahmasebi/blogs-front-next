@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 import { BookmarkIcon, LinkIcon } from "@heroicons/react/outline";
 import { BookmarkIcon as SolidBookmarkIcon } from "@heroicons/react/solid";
@@ -8,7 +9,7 @@ import { FaTelegram } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 
 import PostInteraction from "@/components/posts/PostInteraction";
-import CopyToClipboard from "react-copy-to-clipboard";
+import PostList from "@/components/posts/PostList";
 
 const PostPage = ({ post }) => {
   const [copied, setCopied] = useState(false);
@@ -21,9 +22,9 @@ const PostPage = ({ post }) => {
   };
 
   return (
-    <div className="h-screen bg-gray-50">
+    <div className="mix-h-screen bg-gray-50">
       <div className="max-w-screen-lg container mx-auto">
-        <header className="flex flex-col md:flex-row md:justify-between md:items-start gap-y-5 mx-auto mb-12">
+        <header className="max-w-screen-md flex flex-col md:flex-row md:justify-between md:items-start gap-y-5 mx-auto mb-12">
           <div className="flex items-stretch">
             <img
               src="/public/images/nextjs.png"
@@ -62,7 +63,7 @@ const PostPage = ({ post }) => {
             </button>
           </div>
         </header>
-        <main className="mb-8 prose prose-xl prose-slate prose-h1:text-xl md:prose-h1:text-3xl prose-h1:font-black prose-h2:text-2xl prose-h2:font-extrabold prose-p:text-base prose-p:leading-8 md:prose-p:text-lg md:prose-p:leading-10 prose-img:rounded-xl prose-a:text-blue-500">
+        <main className="max-w-screen-md mx-auto mb-8 prose prose-xl prose-slate prose-h1:text-xl md:prose-h1:text-3xl prose-h1:font-black prose-h2:text-2xl prose-h2:font-extrabold prose-p:text-base prose-p:leading-8 md:prose-p:text-lg md:prose-p:leading-10 prose-img:rounded-xl prose-a:text-blue-500">
           <h1>{post.title}</h1>
           <h2>subject</h2>
           <p>
