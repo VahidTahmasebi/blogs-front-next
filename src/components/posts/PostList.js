@@ -3,8 +3,7 @@ import Link from "next/link";
 import PostInteraction from "./PostInteraction";
 
 const PostList = ({ blogsData }) => {
-  console.log(blogsData);
-  return blogsData.docs.map((blog, index) => {
+  return blogsData.map((blog, index) => {
     return (
       <div
         key={index}
