@@ -196,6 +196,12 @@ const PostPage = ({ post }) => {
             </div>
           </div>
         </section>
+        <section className="mb-20">
+          <h2 className="font-extrabold text-2xl md:text-3xl">Similar posts</h2>
+          <div className="grid grid-cols-6 gap-8">
+            <PostList blogsData={post.related.docs} />
+          </div>
+        </section>
       </div>
     </div>
   );
