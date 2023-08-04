@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import SingleComment from "./singleComment";
 import CommentForm from "./CommentForm";
+import ReplayComment from "./ReplayComment";
 
 const PostComments = ({ post }) => {
   const [commentValue, setCommentValue] = useState();
@@ -15,6 +16,10 @@ const PostComments = ({ post }) => {
           comment.status === 2 && (
             <React.Fragment key={comment._id}>
               <SingleComment comment={comment} />
+              <ReplayComment
+                comments={post.comments}
+                parentCommentId={comment._id}
+              />
             </React.Fragment>
           )
         );
