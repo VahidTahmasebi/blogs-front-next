@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import CopyToClipboard from "react-copy-to-clipboard";
 
 import { BookmarkIcon, LinkIcon } from "@heroicons/react/outline";
 import { BookmarkIcon as SolidBookmarkIcon } from "@heroicons/react/solid";
@@ -8,8 +7,12 @@ import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 
+import CopyToClipboard from "react-copy-to-clipboard";
+import toLocalDate from "@/utils/toLocalDate";
+
 import PostInteraction from "@/components/posts/PostInteraction";
 import PostList from "@/components/posts/PostList";
+import PostComments from "@/components/posts/postComments";
 
 const PostPage = ({ post }) => {
   const [copied, setCopied] = useState(false);
@@ -38,7 +41,7 @@ const PostPage = ({ post }) => {
               {post.author.biography}
             </span>
             <div className="font-normal text-sm text-gray-400">
-              <span>{new Date(post.createdAt).toLocalDateString("en-us")}</span>
+              <span>{toLocalDate(post.createdAt)}</span>
               <span className="mx-1">&bull;</span>
               <span>
                 <span>Read</span>
@@ -203,6 +206,8 @@ const PostPage = ({ post }) => {
             <PostList blogsData={post.related.docs} />
           </div>
         </section>
+
+        <PostComments post={post} />
       </div>
     </div>
   );
