@@ -1,5 +1,7 @@
-import { ClockIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+
+import { ClockIcon } from "@heroicons/react/outline";
+
 import PostInteraction from "./PostInteraction";
 
 const PostList = ({ blogsData }) => {

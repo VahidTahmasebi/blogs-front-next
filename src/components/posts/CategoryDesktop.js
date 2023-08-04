@@ -1,7 +1,7 @@
+import { useState } from "react";
 import Link from "next/link";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
-import { useState } from "react";
 
 const CategoryDesktop = ({ postCategories }) => {
   const [isOpen, setIsOpen] = useState(true);
