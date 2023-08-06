@@ -30,7 +30,7 @@ const PostPage = ({ post }) => {
         <header className="max-w-screen-md flex flex-col md:flex-row md:justify-between md:items-start gap-y-5 mx-auto mb-12">
           <div className="flex items-stretch">
             <img
-              src="/public/images/nextjs.png"
+              src="/public/images/vahid.jpg"
               alt={post.author.name}
               className="w-14 h-14 md:w-20 md:h-20 rounded-full ring-2 ring-white"
             />

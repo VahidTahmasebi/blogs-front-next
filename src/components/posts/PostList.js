@@ -31,7 +31,7 @@ const PostList = ({ blogsData }) => {
                 <Link href={`/posts/${blog.hashedId}/${blog.slug}`}>
                   <a>
                     <img
-                      src="/public/images/nextjs.png"
+                      src="/public/images/vahid.jpg"
                       alt=""
                       className="w-6 h-6 ml-2 rounded-full ring-2 ring-white"
                     />
