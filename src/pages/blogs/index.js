@@ -29,8 +29,6 @@ export default function Home({ blogsData, postCategories }) {
 }
 
 export async function getServerSideProps(context) {
-  const { params } = context;
-
   const { data: result } = await axios.get(
     "http://localhost:5000/api/posts?limit=6&page=1"
   );
